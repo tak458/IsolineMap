@@ -63,13 +63,6 @@ namespace IsolineMap
 						Triangle triangle_ABC = commonEdgeTriangles[0];
 						Triangle triangle_ABD = commonEdgeTriangles[1];
 
-						if (triangle_ABC.Equals(triangle_ABD))
-						{
-							Triangles.Remove(triangle_ABC);
-							Triangles.Remove(triangle_ABD);
-							continue;
-						}
-
 						Vector point_A = edge.Point1;
 						Vector point_B = edge.Point2;
 						Vector point_C = triangle_ABC.GetOppositeVertex(edge);

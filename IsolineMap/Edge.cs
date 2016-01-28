@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace IsolineMap
 {
-	public class Edge : IEquatable<Edge>, IComparable
+	public class Edge : IEquatable<Edge>, IComparable<Edge>
 	{
 		/// <summary>
 		/// 指定した点から辺を定義します。
@@ -37,9 +37,9 @@ namespace IsolineMap
 			}
 		}
 
-		public int CompareTo(object obj)
+		public int CompareTo(Edge other)
 		{
-			return GetHashCode() - obj.GetHashCode();
+			return GetHashCode() - other.GetHashCode();
 		}
 
 		public bool Equals(Edge other)
@@ -70,7 +70,7 @@ namespace IsolineMap
 		}
 		public override string ToString()
 		{
-			return string.Format("(P1:{0} P2:{1})", Point1, Point2);
+			return $"(P1:{Point1} P2:{Point2})";
 		}
 	}
 }
